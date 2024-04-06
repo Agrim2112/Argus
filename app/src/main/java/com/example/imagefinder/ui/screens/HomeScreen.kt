@@ -1,9 +1,7 @@
 package com.example.imagefinder.ui.screens
 
-import android.app.AlertDialog
 import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,18 +22,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.imagefinder.R
 import com.example.imagefinder.model.ReverseSearchImageModel
+import com.example.imagefinder.ui.Screen
 import com.example.imagefinder.ui.theme.ImageFinderTheme
-import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale.Category
 
 
 @Composable
 fun HomeScreen(
-    viewModel: ImageViewModel= hiltViewModel(),
+    navController: NavController,
+    viewModel: ImageViewModel = hiltViewModel(),
     modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
@@ -79,18 +77,18 @@ fun HomeScreen(
             fontSize = 30.sp
         )
 
-        CategoryGrid()
+        CategoryGrid(navController)
     }
 }
 
 @Composable
-fun CategoryGrid() {
+fun CategoryGrid(navController: NavController) {
     Box {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Screen.Plagiarism.route) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(150.dp)
@@ -100,7 +98,7 @@ fun CategoryGrid() {
             }
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Screen.DeepFake.route) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(150.dp)
@@ -118,6 +116,7 @@ fun CategoryGrid() {
 @Composable
 fun HomeScreenPreview() {
     ImageFinderTheme {
-        HomeScreen()
+        val navController = rememberNavController()
+        HomeScreen(navController = navController)
     }
 }

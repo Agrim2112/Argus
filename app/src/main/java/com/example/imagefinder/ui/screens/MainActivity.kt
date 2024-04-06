@@ -3,10 +3,8 @@ package com.example.imagefinder.ui.screens
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.imagefinder.ui.AppNavigator
 import com.example.imagefinder.ui.theme.ImageFinderTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +14,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ImageFinderTheme {
-                HomeScreen()
+                val navController = rememberNavController()
+                AppNavigator(navController = navController)
             }
         }
     }

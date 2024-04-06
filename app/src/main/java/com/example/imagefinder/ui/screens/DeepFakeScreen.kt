@@ -11,10 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
 
 @Composable
-fun DeepFakeScreen(viewModel: DeepFakeVideoViewModel) {
+fun DeepFakeScreen(viewModel: DeepFakeVideoViewModel, navController: NavHostController) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -47,5 +48,8 @@ fun DeepFakeScreen(viewModel: DeepFakeVideoViewModel) {
 @Preview(showBackground = true)
 @Composable
 fun DeepFakeScreenPreview() {
-    DeepFakeScreen(viewModel = DeepFakeVideoViewModel())
+    DeepFakeScreen(viewModel = DeepFakeVideoViewModel(),
+        navController = NavHostController(LocalContext.current)
+    )
+
 }

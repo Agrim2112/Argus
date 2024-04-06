@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ImageViewModel
+class   ImageViewModel
 @Inject constructor(private val appRepository: AppRepository): ViewModel()
 {
     private val fetchReverseSearchImages =MutableLiveData<ReverseSearchImageModel>()
