@@ -18,7 +18,7 @@
         android:theme="@style/Theme.ImageFinder"
         tools:targetApi="31">
         <activity
-            android:name=".ui.DeepfakeActivity"
+            android:name=".ui.PlagiarismActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
@@ -27,7 +27,7 @@
             android:name=".ui.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.PlagiarismActivity"
+            android:name=".ui.DeepfakeActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>

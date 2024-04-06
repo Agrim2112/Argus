@@ -7,5 +7,5 @@ import javax.inject.Inject
 
 class AppRepository2
 @Inject constructor(private val apiService2: ApiService2){
-    suspend fun detect(deepfakeRequestBody:DeepfakeRequestBody)=apiService2.detectDeepfake(deepfakeRequestBody)
+    suspend fun detectDeepfake(deepfakeRequestBody:DeepfakeRequestBody)=apiService2.detectDeepfake(deepfakeRequestBody)
 }
