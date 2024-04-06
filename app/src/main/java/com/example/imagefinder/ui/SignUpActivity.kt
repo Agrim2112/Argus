@@ -1,4 +1,4 @@
-package com.example.imagefinder.ui.screens
+package com.example.imagefinder.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

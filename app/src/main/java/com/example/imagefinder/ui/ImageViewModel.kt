@@ -1,4 +1,4 @@
-package com.example.imagefinder.ui.screens
+package com.example.imagefinder.ui
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -18,9 +18,6 @@ class ImageViewModel
     private val fetchReverseSearchImages =MutableLiveData<ReverseSearchImageModel>()
     val reverseSearchImageResponse:LiveData<ReverseSearchImageModel>
         get()= fetchReverseSearchImages
-
-    init {
-    }
 
     fun getReverseSearchImage(image_url: String) {
         viewModelScope.launch {

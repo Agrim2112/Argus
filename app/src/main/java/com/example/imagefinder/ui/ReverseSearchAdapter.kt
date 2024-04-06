@@ -1,12 +1,12 @@
+package com.example.imagefinder.ui
+
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.imagefinder.databinding.ItemReverseBinding
 import com.example.imagefinder.model.Data
-import com.example.imagefinder.model.ReverseSearchImageModel
 
 class ReverseSearchAdapter(private val context: Context, private val reverseImagesList: MutableList<Data>) : RecyclerView.Adapter<ReverseSearchAdapter.ViewHolder>() {
 
