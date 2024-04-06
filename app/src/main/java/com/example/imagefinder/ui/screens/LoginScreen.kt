@@ -31,7 +31,7 @@ import com.example.imagefinder.ui.theme.ImageFinderTheme
 fun LoginScreen(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    color: Int = R.color.background_blue,
+//    color: Int = R.color.background_blue,
     ) {
     Column(
         modifier = modifier
