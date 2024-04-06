@@ -1,7 +1,5 @@
-package com.example.imagefinder
+package com.example.imagefinder.ui.screens
 
-import android.graphics.BitmapFactory
-import android.util.Base64
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,12 +9,10 @@ import com.example.imagefinder.model.ReverseSearchImageModel
 import com.example.imagefinder.repository.AppRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.io.ByteArrayOutputStream
-import java.net.HttpURLConnection
 import javax.inject.Inject
 
 @HiltViewModel
-class MoviesViewModel
+class ImageViewModel
 @Inject constructor(private val appRepository: AppRepository): ViewModel()
 {
     private val fetchReverseSearchImages =MutableLiveData<ReverseSearchImageModel>()
@@ -38,8 +34,4 @@ class MoviesViewModel
             }
         }
     }
-
-
-
-
 }

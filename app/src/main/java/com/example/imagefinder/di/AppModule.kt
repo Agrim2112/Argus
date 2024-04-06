@@ -1,6 +1,7 @@
 package com.example.imagefinder.di
 
 import com.example.imagefinder.api.ApiService
+import com.example.imagefinder.repository.AppRepository
 import com.example.imagefinder.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -21,4 +22,5 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
+
 }
