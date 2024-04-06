@@ -51,18 +51,15 @@ Install my-project with npm
     2) Upload pictures:
     Once logged in, upload the pictures you want to monitor for unauthorized usage.
 
-    3) Configure scanning preferences:
-    Choose the online platforms you want Argus to monitor for potential unauthorized usage of your pictures.
-
     4) Receive notifications:
     Argus will periodically scan the selected platforms and notify you via email or in-app notifications when unauthorized usage is detected.
 
 - Deepfake Detection
     1) Upload media files:
-    Select the image or video file you want to analyze for deepfake content.
+    Select the video file you want to analyze for deepfake content.
 
     2) Wait for analysis:
-    Argus will process the uploaded media file using advanced deepfake detection algorithms.
+    Argus will process the uploaded media file using advanced deepfake detection api.
 
     3) View analysis results:
     Once analysis is complete, users can view detailed insights into the authenticity of the media file, including potential manipulations or deepfake elements detected.
