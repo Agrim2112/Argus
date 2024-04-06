@@ -88,7 +88,7 @@
             android:fontFamily="@font/lato_black"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="Sign Up"
+            android:text="Sign In"
             android:textColor="@color/white"
             android:textSize="18sp" />
         <LinearLayout
@@ -100,25 +100,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
-            <TextView
-                android:id="@+id/tvSign"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/manrope_semibold"
-                android:text="Already have an account?"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/tvSign"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/manrope_semibold"-->
+<!--                android:text="Already have an account?"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="16sp" />-->
 
-            <TextView
-                android:id="@+id/tvlogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:fontFamily="@font/manrope_semibold"
-                android:text="Login"
-                android:textColor="#6E7AFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/tvlogin"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:fontFamily="@font/manrope_semibold"-->
+<!--                android:text="Login"-->
+<!--                android:textColor="#6E7AFF"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold" />-->
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

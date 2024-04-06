@@ -1,11 +1,10 @@
 package com.example.imagefinder.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.imagefinder.R
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.imagefinder.databinding.ActivityCategorySelectionBinding
-import com.example.imagefinder.databinding.ActivitySignUpBinding
 
 class CategorySelectionActivity : AppCompatActivity() {
     private var binding: ActivityCategorySelectionBinding? = null
@@ -14,6 +13,8 @@ class CategorySelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCategorySelectionBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        Log.d("CategorySelectionActivity", "Activity created")
 
         binding?.cardView1?.setOnClickListener()
         {

@@ -27,6 +27,9 @@
             android:name=".ui.PlagiarismActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.CategorySelectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SignUpActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
