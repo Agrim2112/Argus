@@ -1,5 +1,6 @@
 package com.example.imagefinder.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -22,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,11 +35,16 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.imagefinder.R
+import com.example.imagefinder.model.Data
+import com.example.imagefinder.model.ReverseSearchImageModel
 import com.example.imagefinder.ui.theme.ImageFinderTheme
 
 @Composable
-fun ImageFinderScreen(modifier: Modifier = Modifier) {
+fun ImageFinderScreen(viewModel: ImageViewModel= hiltViewModel(), modifier: Modifier = Modifier) {
+
+    var value by remember{ mutableStateOf("") }
     Column(
         modifier = modifier
             .background(color = colorResource(id = R.color.background_blue))
@@ -47,8 +55,8 @@ fun ImageFinderScreen(modifier: Modifier = Modifier) {
         )
 
         OutlinedTextField(
-            value = "Enter URL here",
-            onValueChange = { },
+            value = value,
+            onValueChange = { value=it},
         )
 
         Text(
@@ -56,14 +64,47 @@ fun ImageFinderScreen(modifier: Modifier = Modifier) {
             color = colorResource(id = R.color.white)
         )
 
-        LazyColumn {
-
+        Button(onClick = { viewModel }) {
+            Text(text = "Submit")
         }
+//        val reverseSearchImageResponse by viewModel.ReverseSearchImageResponse.
+//        reverseSearchImageResponse?.let { response ->
+//            LazyColumn {
+//                items(response.data) { data ->
+//                    DetailCard(data)
+//                }
+//            }
+//        }
+        var reverseSearchImageResponse by remember { mutableStateOf<ReverseSearchImageModel?>(null) }
+
+        // Trigger API call when the screen is first displayed
+        LaunchedEffect(Unit) {
+            viewModel.getReverseSearchImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_VTsTN947wxfPvR6azPju20BotT7BNvh_VZLnjduuNQ&s")
+        }
+
+        // Observe changes in the LiveData from the ViewModel
+        viewModel.ReverseSearchImageResponse.observeForever(){
+            response-> reverseSearchImageResponse = response
+        }
+
+        // Render UI based on API response
+//        if (reverseSearchImageResponse != null) {
+//            LazyColumn {
+//                items(reverseSearchImageResponse?.data ?: emptyList()) { imageData ->
+//                    DetailCard(imageData)
+//                }
+//            }
+//            Log.d("Success", reverseSearchImageResponse?.data.toString())
+//        } else {
+//            // Handle loading or error states
+//        }
+
     }
 }
 
 @Composable
 fun DetailCard(
+    data:Data,
     modifier : Modifier = Modifier,
 ) {
     var expanded by remember { mutableStateOf(false) }
@@ -117,15 +158,15 @@ fun DetailCard(
 
             if(expanded) {
                 Text (
-                    text = "Title: " + "title",
+                    text = "Title: " + data?.title,
                 )
 
                 Text (
-                    text = "Link: " + "URL",
+                    text = "Link: " + data?.link,
                 )
 
                 Text (
-                    text = "Date: " + "date",
+                    text = "Date: " + data?.date,
                 )
             }
         }
@@ -140,10 +181,10 @@ fun ImageFinderScreenPreview() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DetailCardPreview() {
-    ImageFinderTheme {
-        DetailCard()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun DetailCardPreview() {
+//    ImageFinderTheme {
+//        DetailCard()
+//    }
+//}

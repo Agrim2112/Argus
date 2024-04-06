@@ -42,24 +42,24 @@ fun HomeScreen(
         .background(colorResource(id = R.color.background_blue)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        var reverseSearchImageResponse by remember { mutableStateOf<ReverseSearchImageModel?>(null) }
-
-        // Trigger API call when the screen is first displayed
-        LaunchedEffect(Unit) {
-            viewModel.getReverseSearchImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_VTsTN947wxfPvR6azPju20BotT7BNvh_VZLnjduuNQ&s")
-        }
-
-        // Observe changes in the LiveData from the ViewModel
-        viewModel.ReverseSearchImageResponse.observeForever(){
-            response-> reverseSearchImageResponse = response
-        }
-
-        // Render UI based on API response
-        if (reverseSearchImageResponse != null) {
-            Log.d("Success", reverseSearchImageResponse?.data.toString())
-        } else {
-            // Handle loading or error states
-        }
+//        var reverseSearchImageResponse by remember { mutableStateOf<ReverseSearchImageModel?>(null) }
+//
+//        // Trigger API call when the screen is first displayed
+//        LaunchedEffect(Unit) {
+//            viewModel.getReverseSearchImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_VTsTN947wxfPvR6azPju20BotT7BNvh_VZLnjduuNQ&s")
+//        }
+//
+//        // Observe changes in the LiveData from the ViewModel
+//        viewModel.ReverseSearchImageResponse.observeForever(){
+//            response-> reverseSearchImageResponse = response
+//        }
+//
+//        // Render UI based on API response
+//        if (reverseSearchImageResponse != null) {
+//            Log.d("Success", reverseSearchImageResponse?.data.toString())
+//        } else {
+//            // Handle loading or error states
+//        }
             Text(
                 text = "Hey Hacker",
                 color = colorResource(id = R.color.text_blue),
