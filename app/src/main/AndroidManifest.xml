@@ -18,25 +18,20 @@
         android:theme="@style/ImageFinder"
         tools:targetApi="31">
         <activity
-            android:name=".ui.CategorySelectionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.PlagiarismActivity"
+            android:name=".ui.DeepfakeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.DeepfakeActivity"
+            android:name=".ui.PlagiarismActivity"
             android:exported="false" />
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

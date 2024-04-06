@@ -9,12 +9,22 @@ android {
     namespace = "com.example.imagefinder"
     compileSdk = 34
 
+    dataBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.imagefinder"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        manifestPlaceholders += mapOf(
+            "auth0Domain" to "dev-0m2h6rhg8jvggqmu.us.auth0.com",
+            "auth0Scheme" to "demo"
+        )
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -52,7 +62,7 @@ android {
         dataBinding = true
     }
 }
-
+  
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -105,4 +115,7 @@ dependencies {
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.15.0")
     kapt ("com.github.bumptech.glide:compiler:4.12.0")
+
+//    auth0
+    implementation ("com.auth0.android:auth0:2.+")
 }
