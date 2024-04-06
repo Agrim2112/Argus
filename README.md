@@ -1,6 +1,7 @@
 
-![Logo](images/logo.png)
-
+<p align="center">
+  <img src="images/newLogo.png" height="150" width="150" alt="Image Description">
+</p>
 
 # Argus
 
@@ -8,7 +9,10 @@ Argus is an application designed to protect users' visual content on the interne
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](images/Screenshot1.png)
+![App Screenshot](images/Screenshot2.png)
+![App Screenshot](images/Screenshot3.png)
+![App Screenshot](images/Screenshot4.png)
 
 
 ## Features
