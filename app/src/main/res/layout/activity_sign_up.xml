@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,12 +21,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lexend_semibold"
+            android:layout_marginLeft="40dp"
+            android:text="Argus"
             android:textColor="@color/white"
-            android:textSize="27sp"
-            android:text="Argus" />
+            android:textSize="67sp" />
         <ImageView
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
             android:src="@drawable/img_2"/>
     </LinearLayout>
 
