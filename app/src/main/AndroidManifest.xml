@@ -18,6 +18,9 @@
         android:theme="@style/Theme.ImageFinder"
         tools:targetApi="31">
         <activity
+            android:name=".ui.screens.DeepfakeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.screens.LoginActivity"
             android:exported="false" />
         <activity
