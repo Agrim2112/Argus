@@ -71,19 +71,22 @@ class SignUpActivity : AppCompatActivity() {
             })
     }
 
-    private fun logout() {
-        WebAuthProvider.logout(account)
-            .withScheme("demo")
-            .start(this, object: Callback<Void?, AuthenticationException> {
-                override fun onSuccess(payload: Void?) {
-                    // The user has been logged out!
-                }
-
-                override fun onFailure(error: AuthenticationException) {
-                    // Something went wrong!
-                }
-            })
-    }
+//    private fun logout() {
+//        WebAuthProvider.logout(account)
+//            .withScheme("demo")
+//            .start(this, object: Callback<Void?, AuthenticationException> {
+//                override fun onSuccess(payload: Void?) {
+//                    val intent = Intent(this@SignUpActivity, SignUpActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
+//                    // The user has been logged out!
+//                }
+//
+//                override fun onFailure(error: AuthenticationException) {
+//                    // Something went wrong!
+//                }
+//            })
+//    }
 
     private fun showUserProfile(accessToken: String) {
         val client = AuthenticationAPIClient(account)
