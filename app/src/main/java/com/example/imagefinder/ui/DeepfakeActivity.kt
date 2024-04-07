@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -48,7 +49,6 @@ class DeepfakeActivity : AppCompatActivity() {
             }
         }
 
-        // Open file picker when button is clicked
         binding?.btnUpload?.setOnClickListener {
             openFilePicker(filePickerLauncher)
         }
@@ -102,7 +102,11 @@ class DeepfakeActivity : AppCompatActivity() {
                 }
                 else
                 {
-                    binding?.tvResult?.text=deepfakeDetectionResponse?.result.toString()
+                    binding?.tvResult?.visibility= View.VISIBLE
+                    if(deepfakeDetectionResponse?.success==true)
+                    binding?.tvResult?.text="The given video is a deepfake"
+                    else
+                        binding?.tvResult?.text="The given video is not a deepfake"
                 }
             }
         }

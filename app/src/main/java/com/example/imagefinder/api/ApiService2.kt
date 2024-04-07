@@ -10,7 +10,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService2 {
-        @Headers("token: 9e77fa99fa336a96f12bb5e41e83ff4e", "content-type: application/json")
+        @Headers("token: 9873fecaf5613cc0a92dedb448d5a81c", "content-type: application/json")
         @POST("deepfake-detection")
         suspend fun detectDeepfake(@Body requestBody: DeepfakeRequestBody): Response<DeepfakeDetectionResponse>
 }
