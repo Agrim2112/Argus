@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.imagefinder.databinding.ActivityCategorySelectionBinding
 
 class CategorySelectionActivity : AppCompatActivity() {
@@ -13,6 +14,19 @@ class CategorySelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCategorySelectionBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        val sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE)
+        val name = sharedPreferences.getString("name", "User")
+        val pictureUrl = sharedPreferences.getString("pictureUrl", null)
+        binding?.greetingsText?.text = "Hello, $name!"
+
+        Log.d("CategorySelectionActivity", "Picture URL: $pictureUrl, $name")
+
+        if (pictureUrl != null) {
+            Glide.with(this)
+                .load(pictureUrl)
+                .into(binding!!.profileView)
+        }
 
         Log.d("CategorySelectionActivity", "Activity created")
 

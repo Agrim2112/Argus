@@ -8,7 +8,7 @@
     android:background="#171A1F"
     tools:context=".ui.CategorySelectionActivity">
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         android:id="@+id/profileView"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -16,7 +16,6 @@
         android:paddingLeft="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius="100dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView

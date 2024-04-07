@@ -65,6 +65,8 @@ class SignUpActivity : AppCompatActivity() {
 //                    finish()
 
                     Log.d("LoginActivity", "Login successful, starting CategorySelectionActivity")
+
+                    showUserProfile(accessToken)
                 }
             })
     }
@@ -84,7 +86,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun showUserProfile(accessToken: String) {
-        var client = AuthenticationAPIClient(account)
+        val client = AuthenticationAPIClient(account)
 
         // With the access token, call `userInfo` and get the profile from Auth0.
         client.userInfo(accessToken)
@@ -97,6 +99,13 @@ class SignUpActivity : AppCompatActivity() {
                     // We have the user's profile!
                     val email = profile.email
                     val name = profile.name
+                    val pictureUrl = profile.pictureURL
+
+                    val sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("name", name)
+                    editor.putString("pictureUrl", pictureUrl)
+                    editor.apply()
                 }
             })
     }
