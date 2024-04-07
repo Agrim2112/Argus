@@ -59,6 +59,8 @@ class SignUpActivity : AppCompatActivity() {
                 override fun onSuccess(credentials: Credentials) {
                     val accessToken = credentials.accessToken
 
+                    showUserProfile(accessToken)
+
                     // Start CategorySelectionActivity
                     val intent = Intent(this@SignUpActivity, CategorySelectionActivity::class.java)
                     startActivity(intent)
@@ -66,7 +68,7 @@ class SignUpActivity : AppCompatActivity() {
 
                     Log.d("LoginActivity", "Login successful, starting CategorySelectionActivity")
 
-                    showUserProfile(accessToken)
+
                 }
             })
     }
